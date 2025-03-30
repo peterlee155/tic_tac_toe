@@ -1,0 +1,179 @@
+/* TicTacToe.css */
+
+body {
+    background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .game-container {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    text-align: center;
+    width: 340px;
+    animation: pop-in 0.6s ease;
+  }
+  
+  @keyframes pop-in {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+  
+  .status {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .square {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    color: #222;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s, background 0.3s;
+    cursor: pointer;
+  }
+  
+  
+  .square:hover {
+    background: #fff;
+    transform: scale(1.1);
+  }
+  
+  .reset-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .reset-btn:hover {
+    background: #e85c50;
+  }
+  
+  .winner-style {
+  color: #4B0082;
+  font-size: 1.8rem;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+.winner-name {
+  color: #FF1493;
+  font-weight: 900;
+  font-size: 2rem;
+  text-shadow: 0 0 10px #FF69B4, 0 0 20px #FF69B4;
+  font-family: 'Comic Sans MS', 'Segoe UI', cursive;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.winner-box {
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px #ff1493;
+    animation: winnerPulse 1s infinite alternate;
+  }
+  
+  .winner-celebrate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+  }
+  
+  .winner-text {
+    font-weight: bold;
+    font-size: 1.7rem;
+    color: #222;
+  }
+  
+  .winner-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #FF1493;
+    text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493;
+    font-family: 'Segoe UI', cursive;
+    animation: neonFlash 1s infinite;
+  }
+  
+  .trophy {
+    font-size: 2.2rem;
+    animation: pop 1s infinite;
+  }
+  
+  @keyframes winnerPulse {
+    from {
+      box-shadow: 0 0 10px #ff1493;
+    }
+    to {
+      box-shadow: 0 0 25px #ff69b4, 0 0 35px #ff1493;
+    }
+  }
+  
+  @keyframes neonFlash {
+    0%, 100% {
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+    }
+    50% {
+      text-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493;
+    }
+  }
+  
+  @keyframes pop {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.3);
+    }
+  }
+  
